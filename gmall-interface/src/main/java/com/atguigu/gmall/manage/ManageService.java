@@ -1,9 +1,6 @@
 package com.atguigu.gmall.manage;
 
-import com.atguigu.gmall.bean.BaseAttrInfo;
-import com.atguigu.gmall.bean.BaseCatalog1;
-import com.atguigu.gmall.bean.BaseCatalog2;
-import com.atguigu.gmall.bean.BaseCatalog3;
+import com.atguigu.gmall.bean.*;
 
 import java.util.List;
 
@@ -21,6 +18,7 @@ public interface ManageService {
      * @return
      */
     public List<BaseCatalog2> getCatelog2(String catalog1Id);
+    public List<BaseCatalog2> getCatelog2(BaseCatalog2 baseCatalog2);
 
     /**
      * 平台属性列表-三级分类查询
@@ -28,6 +26,7 @@ public interface ManageService {
      * @return
      */
     public List<BaseCatalog3> getCatalog3(String catalog2Id);
+    public List<BaseCatalog3> getCatalog3(BaseCatalog3 baseCatalog3);
 
     /**
      * 平台属性列表-平台属性信息
@@ -35,12 +34,14 @@ public interface ManageService {
      * @return
      */
     public List<BaseAttrInfo> getAttrList(String catalog3Id);
+    public List<BaseAttrInfo> getAttrList(BaseAttrInfo baseAttrInfo);
 
     /**
      * 平台属性列表-添加属性/修改属性（保存）
      * @param baseAttrInfo
      */
     void saveAttrInfo(BaseAttrInfo baseAttrInfo);
+
 
     /**
      * 平台属性列表
@@ -50,4 +51,11 @@ public interface ManageService {
      * @return
      */
     BaseAttrInfo getAttrValueList(String attrId);
+
+    /**
+     * 商品信息管理-根据商品对象查询商品信息
+     * @param spuInfo
+     * @return
+     */
+    List<SpuInfo> getSpuInfoList(SpuInfo spuInfo);
 }

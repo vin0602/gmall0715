@@ -16,19 +16,16 @@ public class ManageServiceImpl implements ManageService {
 
     @Autowired
     private BaseCatalog1Mapper baseCatalog1Mapper;
-
     @Autowired
     private BaseCatalog2Mapper baseCatalog2Mapper;
-
     @Autowired
     private BaseCatalog3Mapper baseCatalog3Mapper;
-
     @Autowired
     private BaseAttrInfoMapper baseAttrInfoMapper;
-
     @Autowired
     private BaseAttrValueMapper baseAttrValueMapper;
-
+    @Autowired
+    private SpuInfoMapper spuInfoMapper;
 
     @Override
     public List <BaseCatalog1> getCatalog1() {
@@ -42,6 +39,10 @@ public class ManageServiceImpl implements ManageService {
         baseCatalog2.setCatalog1Id(catalog1Id);
         return baseCatalog2Mapper.select(baseCatalog2);
     }
+    @Override
+    public List <BaseCatalog2> getCatelog2(BaseCatalog2 baseCatalog2) {
+        return baseCatalog2Mapper.select(baseCatalog2);
+    }
 
     @Override
     public List <BaseCatalog3> getCatalog3(String catalog2Id) {
@@ -49,11 +50,19 @@ public class ManageServiceImpl implements ManageService {
         baseCatalog3.setCatalog2Id(catalog2Id);
         return baseCatalog3Mapper.select(baseCatalog3);
     }
+    @Override
+    public List <BaseCatalog3> getCatalog3(BaseCatalog3 baseCatalog3) {
+        return baseCatalog3Mapper.select(baseCatalog3);
+    }
 
     @Override
     public List <BaseAttrInfo> getAttrList(String catalog3Id) {
         BaseAttrInfo baseAttrInfo = new BaseAttrInfo();
         baseAttrInfo.setCatalog3Id(catalog3Id);
+        return baseAttrInfoMapper.select(baseAttrInfo);
+    }
+    @Override
+    public List <BaseAttrInfo> getAttrList(BaseAttrInfo baseAttrInfo) {
         return baseAttrInfoMapper.select(baseAttrInfo);
     }
 
@@ -101,5 +110,10 @@ public class ManageServiceImpl implements ManageService {
         baseAttrInfo.setAttrValueList(attrValueList);
         // 将属性对象返回
         return baseAttrInfo;
+    }
+
+    @Override
+    public List <SpuInfo> getSpuInfoList(SpuInfo spuInfo) {
+        return spuInfoMapper.select(spuInfo);
     }
 }
