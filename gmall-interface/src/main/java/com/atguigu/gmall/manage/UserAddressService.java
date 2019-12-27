@@ -1,4 +1,4 @@
-package com.atguigu.gmall.service;
+package com.atguigu.gmall.manage;
 
 import com.atguigu.gmall.bean.UserAddress;
 
