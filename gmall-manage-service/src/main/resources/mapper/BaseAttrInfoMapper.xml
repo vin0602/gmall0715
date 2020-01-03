@@ -4,6 +4,7 @@
 
     <resultMap id="baseAttrInfoMap" type="com.atguigu.gmall.bean.BaseAttrInfo" autoMapping="true">
         <id column="id" property="id"></id>
+        <!--<result property="id" column="attr_value_id"></result>  注意起别名-->
         <collection ofType="com.atguigu.gmall.bean.BaseAttrValue" property="attrValueList" autoMapping="true">
             <result property="id" column="attr_value_id"></result>
         </collection>
