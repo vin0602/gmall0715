@@ -3,7 +3,7 @@ package com.atguigu.gmall.manage.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.atguigu.gmall.bean.BaseSaleAttr;
 import com.atguigu.gmall.bean.SpuInfo;
-import com.atguigu.gmall.manage.ManageService;
+import com.atguigu.gmall.service.ManageService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

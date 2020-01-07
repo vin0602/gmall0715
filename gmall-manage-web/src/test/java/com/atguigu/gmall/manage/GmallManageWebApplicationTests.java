@@ -16,10 +16,10 @@ import java.io.IOException;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
-class GmallManageWebApplicationTests {
+public class GmallManageWebApplicationTests {
 
 	@Test
-	void contextLoads() {
+	public void contextLoads() {
 	}
 
 
