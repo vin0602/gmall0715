@@ -6,6 +6,7 @@ import com.alibaba.fastjson.JSON;
 import com.atguigu.gmall.bean.SkuInfo;
 import com.atguigu.gmall.bean.SkuSaleAttrValue;
 import com.atguigu.gmall.bean.SpuSaleAttr;
+import com.atguigu.gmall.config.LoginRequire;
 import com.atguigu.gmall.service.ListService;
 import com.atguigu.gmall.service.ManageService;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.lang.annotation.Retention;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,6 +29,7 @@ public class ItemController {
     @Reference
     private ListService listService;
 
+    @LoginRequire
     @RequestMapping("/{skuId}.html")
     public String getSkuInfo(@PathVariable("skuId") String skuId, Model model) {
         // 存储基本的skuInfo信息
