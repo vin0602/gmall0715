@@ -29,7 +29,7 @@ public class ItemController {
     @Reference
     private ListService listService;
 
-    @LoginRequire
+//    @LoginRequire  自定义注解（拦截器）
     @RequestMapping("/{skuId}.html")
     public String getSkuInfo(@PathVariable("skuId") String skuId, Model model) {
         // 存储基本的skuInfo信息

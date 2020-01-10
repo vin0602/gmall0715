@@ -8,6 +8,7 @@ import java.util.List;
 
 @Data
 public class BaseAttrInfo implements Serializable {
+
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
