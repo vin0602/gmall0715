@@ -279,7 +279,8 @@ public class CartSreviceImpl implements CartService {
     }
 
     //获取数据库中的数据并放入缓存
-    private List<CartInfo> loadCartCache(String userId) {
+    @Override
+    public List<CartInfo> loadCartCache(String userId) {
         // 使用实时价格：将skuInfo.price 价格赋值 cartInfo.skuPrice
         List<CartInfo> cartInfoList = cartInfoMapper.selectCartListWithCurPrice(userId);
         if (cartInfoList==null || cartInfoList.size()==0){

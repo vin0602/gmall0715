@@ -156,7 +156,7 @@ public class CartController {
         //获取uerId
         String userId = (String) request.getAttribute("userId");
         List<CartInfo> cartTempList = null;
-        //获取cookie中的mv-userId
+        //获取cookie中的my-userId
         String userTempId = CookieUtil.getCookieValue(request, "my-userId", false);
         if (userTempId!=null){
             cartTempList = cartService.getCartList(userTempId);

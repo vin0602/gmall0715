@@ -70,6 +70,7 @@ public class OrderInfo implements Serializable {
     @Column
     private String outTradeNo;
 
+    //计算总金额
     public void sumTotalAmount() {
         BigDecimal totalAmount = new BigDecimal("0");
         for (OrderDetail orderDetail : orderDetailList) {

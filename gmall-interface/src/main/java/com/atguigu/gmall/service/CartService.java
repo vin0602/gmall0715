@@ -51,6 +51,13 @@ public interface CartService {
      */
     List<CartInfo> getCartCheckedList(String userId);
 
+    /**
+     * 获取数据库中的数据并放入缓存
+     * @param userId
+     * @return
+     */
+    public List<CartInfo> loadCartCache(String userId);
+
 
 
 
